@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('stylesheet'); ?>
+  </head>
+  <body>
+    <div class="form-container">
+      <!-- Left Section - Form Inputs -->
+      <div class="input-section">
+        <!-- Column 1: Nomor & Tujuan -->
+        <div class="column">
+          <h3>NOMOR</h3>
+          <div class="input-group">
+            <label for="nomor">Nomor:</label>
+            <input type="text" id="nomorpgw" name="nomor" placeholder="Masukkan Nomor" oninput="cariPegawai()">
+          </div>
+
+          <div class="input-group">
+            <label for="noSpt">No. SPT:</label>
+            <input type="text" id="noSpt" name="noSpt" placeholder="Masukan No. SPT">
+          </div>
+          
+          <div class="input-group">
+            <label for="noSpd">No. SPD:</label>
+            <input type="number" id="noSpd" name="noSpd" value="03" min="0" step="1">
+          </div>
+          
+          <div class="input-group">
+            <label for="kodeSubdit">Kode Subdit:</label>
+            <input type="text" id="kodeSubdit" name="kodeSubdit" value="BDL">
+          </div>
+          
+          <div class="input-group">
+            <label for="noKartu">No. Kartu:</label>
+            <input type="text" id="noKartu" name="noKartu" value="20201008">
+          </div>
+
+          <h3>TUJUAN</h3>
+          <div class="input-group">
+            <label for="tujuan1">Tujuan 1:</label>
+            <input type="text" id="tujuan1" name="tujuan1" value="Bogor">
+          </div>
+          
+          <div class="input-group">
+            <label for="tujuan2">Tujuan 2:</label>
+            <input type="text" id="tujuan2" name="tujuan2">
+          </div>
+
+          <div class="input-group">
+            <label for="tujuan3">Tujuan 3:</label>
+            <input type="text" id="tujuan3" name="tujuan3">
+          </div>
+
+          <div class="input-group">
+            <label for="tujuan4">Tujuan 4:</label>
+            <input type="text" id="tujuan4" name="tujuan4">
+          </div>
+        </div>
+
+        <!-- Column 2: Tanggal & Biaya -->
+        <div class="column">
+          <h3>TANGGAL</h3>
+          <div class="input-group">
+            <label for="tglPerintah">Tgl. Perintah:</label>
+            <input type="date" id="tglPerintah" name="tglPerintah" value="2024-11-25">
+          </div>
+
+          <div class="input-group">
+            <label for="tglPergi">Tgl. Pergi:</label>
+            <input type="date" id="tglPergi" name="tglPergi" value="2024-11-25">
+          </div>
+          
+          <div class="input-group">
+            <label for="hari">Hari:</label>
+            <input type="number" id="hari" name="hari" value="1" min="1">
+          </div>
+
+          <h3>BIAYA</h3>
+          <div class="input-group">
+            <label for="hotel">Hotel:</label>
+            <input type="text" id="hotel" name="hotel" value="Rp2,553,346">
+          </div>
+          
+          <div class="input-group">
+            <label for="transport">Transport:</label>
+            <input type="text" id="transport" name="transport" value="Rp362,000">
+          </div>
+          
+          <div class="input-group">
+            <label for="taksiJakarta">Taksi Jakarta:</label>
+            <input type="text" id="taksiJakarta" name="taksiJakarta" value="Rp23,456">
+          </div>
+
+          <div class="input-group">
+            <label for="taksiDaerah">Taksi Daerah:</label>
+            <input type="text" id="taksiDaerah" name="taksiDaerah" value="Rp1,112,355">
+          </div>
+        </div>
+
+        <!-- Column 3: Options -->
+        <div class="column">
+          <h3>OPSI PERJALANAN</h3>
+          <div class="radio-group">
+            <label>Jenis Angkutan:</label>
+            <div class="radio-options">
+              <label class="radio-label">
+                <input type="radio" name="jenisAngkutan" value="umum" checked>
+                Umum
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="jenisAngkutan" value="pesawat">
+                Pesawat
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="jenisAngkutan" value="darat">
+                Darat
+              </label>
+            </div>
+          </div>
+
+          <div class="radio-group">
+            <label>Penginapan:</label>
+            <div class="radio-options">
+              <label class="radio-label">
+                <input type="radio" name="penginapan" value="hotel" checked>
+                Hotel
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="penginapan" value="30">
+                30%
+              </label>
+            </div>
+          </div>
+
+          <div class="radio-group">
+            <label>Perjalanan Biasa:</label>
+            <div class="radio-options">
+              <label class="radio-label">
+                <input type="radio" name="perjalananBiasa" value="ya" checked>
+                Ya
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="perjalananBiasa" value="tidak">
+                Tidak
+              </label>
+            </div>
+          </div>
+
+          <div class="radio-group">
+            <label>Pertemuan:</label>
+            <div class="radio-options">
+              <label class="radio-label">
+                <input type="radio" name="pertemuan" value="fullday" checked>
+                Full Day
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="pertemuan" value="halfday">
+                Half Day
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section - Results -->
+      <div class="result-section">
+        <h3 style="color: white;">HASIL</h3>
+        <div class="result-item">
+          <div class="result-label">Nama:</div>
+          <div class="result-value" id="resultNama" readonly>-</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Lokasi:</div>
+          <div class="result-value" id="resultLokasi">-</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Nomor SPD:</div>
+          <div class="result-value" id="resultNoSpd">-</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Nomor MAK:</div>
+          <div class="result-value" id="resultNoMak">-</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Bunyi MAK:</div>
+          <div class="result-value" id="resultBunyiMak">-</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Uang Harian:</div>
+          <div class="result-value" id="resultUangHarian">-</div>
+        </div>
+      </div>
+    </div>
+    <?!= include('javascript'); ?>
+
+  </body>
+</html>
