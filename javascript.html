@@ -32,7 +32,6 @@ function tampilkanHasil(data) {
 
     window.onload = function() {
       loadOptions();
-      // Add event listeners to form inputs
       const inputs = document.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], input[type="radio"]');
       inputs.forEach(input => {
         input.addEventListener('change', updateResults);
