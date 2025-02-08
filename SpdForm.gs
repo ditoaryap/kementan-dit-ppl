@@ -40,7 +40,6 @@ function cariDataPegawai(nomorInput) {
       return "Data tidak ditemukan";
     }
 
-    // Ubah array ke objek berdasarkan header
     let pegawaiObj = {};
     header.forEach((key, index) => {
       if (key) { // Hindari header kosong
